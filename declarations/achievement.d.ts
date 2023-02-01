@@ -1,14 +1,11 @@
 /** @noSelfInFile */
 
-/// <reference path="global.d.ts" />
-/// <reference path="unit.d.ts" />
-
 declare namespace WoWAPI {
-    /**
-     * Achievement links are returned by GetAchievementLink().
-     * @example |cffffff00|Hachievement:2186:00000000002FDDE9:1:12:19:8:4294967295:4294967295:4294967295:4294967295|h[The Immortal]|h|r
-     */
-    type AchievementLink = Hyperlink;
+  /**
+   * Achievement links are returned by GetAchievementLink().
+   * @example |cffffff00|Hachievement:2186:00000000002FDDE9:1:12:19:8:4294967295:4294967295:4294967295:4294967295|h[The Immortal]|h|r
+   */
+  type AchievementLink = Hyperlink;
 }
 
 /**
@@ -59,7 +56,9 @@ declare function GetAchievementCategory(achivementId: number): number;
  * @see https://wow.gamepedia.com/API_GetAchievementComparisonInfo
  * @tupleReturn
  */
-declare function GetAchievementComparisonInfo(achivementId: number): [boolean, number, number, number];
+declare function GetAchievementComparisonInfo(
+  achivementId: number
+): [boolean, number, number, number];
 
 /**
  * Returns information about the given Achievement's specified criteria
@@ -70,7 +69,22 @@ declare function GetAchievementComparisonInfo(achivementId: number): [boolean, n
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetAchievementCriteriaInfo(achivementId: number, criteriaIndex: number): [string, number, boolean, number, number, string, number, number, string, number, boolean];
+declare function GetAchievementCriteriaInfo(
+  achivementId: number,
+  criteriaIndex: number
+): [
+  string,
+  number,
+  boolean,
+  number,
+  number,
+  string,
+  number,
+  number,
+  string,
+  number,
+  boolean
+];
 
 /**
  * Returns information about the given Achievement's specified criteria
@@ -80,7 +94,21 @@ declare function GetAchievementCriteriaInfo(achivementId: number, criteriaIndex:
  * @see https://wow.gamepedia.com/API_GetAchievementCriteriaInfoByID
  */
 // tslint:disable-next-line max-line-length
-declare function GetAchievementCriteriaInfoByID(achivementId: number, criteriaId: number): [string, number, boolean, number, string, number, number, string, number, boolean];
+declare function GetAchievementCriteriaInfoByID(
+  achivementId: number,
+  criteriaId: number
+): [
+  string,
+  number,
+  boolean,
+  number,
+  string,
+  number,
+  number,
+  string,
+  number,
+  boolean
+];
 
 /**
  * Returns information about the given Achievement
@@ -91,9 +119,45 @@ declare function GetAchievementCriteriaInfoByID(achivementId: number, criteriaId
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetAchievementInfo(achivementId: number, index: number): [number, string, number, boolean, number, number, number, string, number, number, string, boolean, boolean, string];
+declare function GetAchievementInfo(
+  achivementId: number,
+  index: number
+): [
+  number,
+  string,
+  number,
+  boolean,
+  number,
+  number,
+  number,
+  string,
+  number,
+  number,
+  string,
+  boolean,
+  boolean,
+  string
+];
 // tslint:disable-next-line max-line-length
-declare function GetAchievementInfo(categoryId: number, index: number): [number, string, number, boolean, number, number, number, string, number, number, string, boolean, boolean, string];
+declare function GetAchievementInfo(
+  categoryId: number,
+  index: number
+): [
+  number,
+  string,
+  number,
+  boolean,
+  number,
+  number,
+  number,
+  string,
+  number,
+  number,
+  string,
+  boolean,
+  boolean,
+  string
+];
 
 /**
  * Returns a achievementLink for the specified Achievement
@@ -101,7 +165,9 @@ declare function GetAchievementInfo(categoryId: number, index: number): [number,
  * @param achivementId The ID of the Achievement
  * @see https://wow.gamepedia.com/API_GetAchievementLink
  */
-declare function GetAchievementLink(achivementId: number): WoWAPI.AchievementLink;
+declare function GetAchievementLink(
+  achivementId: number
+): WoWAPI.AchievementLink;
 
 /**
  * Returns the number of criteria for the given Achievement
@@ -136,7 +202,10 @@ declare function GetCategoryList(): number[];
  * @see https://wow.gamepedia.com/API_GetCategoryNumAchievements
  * @tupleReturn
  */
-declare function GetCategoryNumAchievements(categoryId: number, includeAll?: boolean): [number, number, number];
+declare function GetCategoryNumAchievements(
+  categoryId: number,
+  includeAll?: boolean
+): [number, number, number];
 
 /**
  * Return the value of the requested Statistic from the comparison unit
@@ -172,7 +241,9 @@ declare function GetNextAchievement(achivementId: number): number | null;
  * @param achivementId ID of the achievement to retrieve information for
  * @see https://wow.gamepedia.com/API_GetNumComparisonCompletedAchievements
  */
-declare function GetNumComparisonCompletedAchievements(achivementId: number): [number, number];
+declare function GetNumComparisonCompletedAchievements(
+  achivementId: number
+): [number, number];
 
 /**
  * Return the total number of Achievements, and number completed
@@ -207,7 +278,9 @@ declare function GetPreviousAchievement(achivementId: number): number | null;
  * @returns The value of the requested Statistic
  * @see https://wow.gamepedia.com/API_GetStatistic
  */
-declare function GetStatistic(achievementId: number): WoWAPI.UnknownStringKeyTable;
+declare function GetStatistic(
+  achievementId: number
+): WoWAPI.UnknownStringKeyTable;
 
 /**
  * Returns a table of achievement categories
@@ -233,7 +306,18 @@ declare function GetTotalAchievementPoints(): number;
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetTrackedAchievements(): [number, number, number, number, number, number, number, number, number, number];
+declare function GetTrackedAchievements(): [
+  number,
+  number,
+  number,
+  number,
+  number,
+  number,
+  number,
+  number,
+  number,
+  number
+];
 
 /**
  * Returns the total number of tracked achievements

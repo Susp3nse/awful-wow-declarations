@@ -1,9 +1,9 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type CharacterTotemElementType = 1 | 2 | 3 | 4;
-    type CharacterRestState = 0 | 1;
-    type CharacterDeathkightRuneType = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  type CharacterTotemElementType = 1 | 2 | 3 | 4;
+  type CharacterRestState = 0 | 1;
+  type CharacterDeathkightRuneType = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 /**
@@ -52,7 +52,10 @@ declare function GetBindLocation(): string;
  * will return 0 if target is friendly or not found. Use UnitPower(unitId, 4) to get combo points without an enemy targeted
  * @see https://wow.gamepedia.com/API_GetComboPoints
  */
-declare function GetComboPoints(unitId: WoWAPI.UnitId, target: WoWAPI.UnitId): number;
+declare function GetComboPoints(
+  unitId: WoWAPI.UnitId,
+  target: WoWAPI.UnitId
+): number;
 
 /**
  * Returns the integer of the title currently selected by the player
@@ -67,7 +70,9 @@ declare function GetCurrentTitle(): number;
  * @see https://wow.gamepedia.com/API_GetMirrorTimerInfo
  * @tupleReturn
  */
-declare function GetMirrorTimerInfo(timerIndex: number): [string, number, number, number, WoWAPI.Flag, string];
+declare function GetMirrorTimerInfo(
+  timerIndex: number
+): [string, number, number, number, WoWAPI.Flag, string];
 
 /**
  * Returns the current value of a mirror timer (fatigue, breath, feign death etc).
@@ -119,7 +124,9 @@ declare function GetRestState(): [WoWAPI.CharacterRestState, string, number];
  * @see https://wow.gamepedia.com/API_GetRuneCooldown
  * @tupleReturn
  */
-declare function GetRuneCooldown(runeId: WoWAPI.CharacterDeathkightRuneType): [number, number, boolean];
+declare function GetRuneCooldown(
+  runeId: WoWAPI.CharacterDeathkightRuneType
+): [number, number, boolean];
 
 /**
  * Gets the name of the title associated with a title index

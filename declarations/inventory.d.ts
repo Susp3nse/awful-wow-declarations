@@ -7,7 +7,10 @@
  * @returns start, duration, isEnabled
  * @tupleReturn
  */
-declare function GetInventoryItemCooldown(unit: WoWAPI.UnitId, slotId: number): [number, number, WoWAPI.Flag];
+declare function GetInventoryItemCooldown(
+  unit: WoWAPI.UnitId,
+  slotId: number
+): [number, number, WoWAPI.Flag];
 
 /**
  * Return the texture for an inventory item.
@@ -15,7 +18,10 @@ declare function GetInventoryItemCooldown(unit: WoWAPI.UnitId, slotId: number): 
  * @see https://wow.gamepedia.com/API_GetInventoryItemTexture
  * @returns The texture path for the item in the specified slot, or nil if the slot is empty.
  */
-declare function GetInventoryItemTexture(unit: WoWAPI.UnitId, slotId: number): WoWAPI.TexturePath;
+declare function GetInventoryItemTexture(
+  unit: WoWAPI.UnitId,
+  slotId: number
+): WoWAPI.TexturePath;
 
 /**
  * Return information about a specific inventory slot
@@ -24,4 +30,6 @@ declare function GetInventoryItemTexture(unit: WoWAPI.UnitId, slotId: number): W
  * @returns slotId, textureName
  * @tupleReturn
  */
-declare function GetInventorySlotInfo(slotName: string): [number, WoWAPI.TexturePath];
+declare function GetInventorySlotInfo(
+  slotName: string
+): [number, WoWAPI.TexturePath];

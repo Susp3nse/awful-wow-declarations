@@ -1,8 +1,8 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type CurrentBindingWhich = 1 | 2;
-    type BindingSetType = 0 | CurrentBindingWhich;
+  type CurrentBindingWhich = 1 | 2;
+  type BindingSetType = 0 | CurrentBindingWhich;
 }
 
 /**
@@ -12,7 +12,10 @@ declare namespace WoWAPI {
  * @see https://wow.gamepedia.com/API_GetBinding
  * @tupleReturn
  */
-declare function GetBinding(bindingIndex: number, mode?: WoWAPI.Unknown): [string, string, string];
+declare function GetBinding(
+  bindingIndex: number,
+  mode?: WoWAPI.Unknown
+): [string, string, string];
 
 /**
  * Returns the name of the action performed by the specified binding
@@ -21,7 +24,10 @@ declare function GetBinding(bindingIndex: number, mode?: WoWAPI.Unknown): [strin
  * @returns action command performed by the binding. If no action is bound to the key, an empty string is returned
  * @see https://wow.gamepedia.com/API_GetBindingAction
  */
-declare function GetBindingAction(binding: string, checkOverride?: boolean): string;
+declare function GetBindingAction(
+  binding: string,
+  checkOverride?: boolean
+): string;
 
 /**
  * Returns all keys currently bound to the command specified by command. This function is almost identical to GetBinding(index)
@@ -44,7 +50,11 @@ declare function GetBindingKey(command: string): [...string[]];
  * back in to the output
  * @see https://wow.gamepedia.com/API_GetBindingText
  */
-declare function GetBindingText(key: string, prefix: string, abbreviate?: boolean): string;
+declare function GetBindingText(
+  key: string,
+  prefix: string,
+  abbreviate?: boolean
+): string;
 
 /**
  * Returns whether account- or character-specific bindings are active.
@@ -91,7 +101,9 @@ declare function RunBinding(command: string, up?: string): void;
  * @event UPDATE_BINDINGS
  * @see https://wow.gamepedia.com/API_SaveBindings
  */
-declare function SaveBindings(bindingSafeType: WoWAPI.CurrentBindingWhich): void;
+declare function SaveBindings(
+  bindingSafeType: WoWAPI.CurrentBindingWhich
+): void;
 
 /**
  * @todo: SetBinding() ...

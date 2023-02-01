@@ -1,9 +1,35 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type ChannelChatType = "SAY" | "EMOTE" | "YELL" | "PARTY" | "GUILD" | "OFFICER" | "RAID" | "RAID_WARNING" | "INSTANCE_CHAT" | "WHISPER" | "CHANNEL" |
-                           "AFK" | "DND";
-    type ChannelLanguageId = 1 | 2 | 3 | 6 | 7 | 8 | 10 | 13 | 14 | 33 | 35 | 40 | 43 | 44;
+  type ChannelChatType =
+    | 'SAY'
+    | 'EMOTE'
+    | 'YELL'
+    | 'PARTY'
+    | 'GUILD'
+    | 'OFFICER'
+    | 'RAID'
+    | 'RAID_WARNING'
+    | 'INSTANCE_CHAT'
+    | 'WHISPER'
+    | 'CHANNEL'
+    | 'AFK'
+    | 'DND';
+  type ChannelLanguageId =
+    | 1
+    | 2
+    | 3
+    | 6
+    | 7
+    | 8
+    | 10
+    | 13
+    | 14
+    | 33
+    | 35
+    | 40
+    | 43
+    | 44;
 }
 
 /**
@@ -15,7 +41,10 @@ declare namespace WoWAPI {
  * @param channelName name of the chat channel to add to the frame
  * @see https://wow.gamepedia.com/API_AddChatWindowChannel
  */
-declare function AddChatWindowChannel(windowId: number, channelName: string): void;
+declare function AddChatWindowChannel(
+  windowId: number,
+  channelName: string
+): void;
 
 /**
  * Bans a player from the specified channel
@@ -47,7 +76,10 @@ declare function ChannelKick(channelName: string, playerName: string): void;
  * @param playerName The name of the player to set as a moderator
  * @see https://wow.gamepedia.com/API_ChannelModerator
  */
-declare function ChannelModerator(channelName: string, playerName: string): void;
+declare function ChannelModerator(
+  channelName: string,
+  playerName: string
+): void;
 
 /**
  * Turns off the specified player's ability to speak in a channel
@@ -63,7 +95,10 @@ declare function ChannelMute(channelName: string, playerName: string): void;
  * @param name unknown
  * @see https://wow.gamepedia.com/API_ChannelToggleAnnouncements
  */
-declare function ChannelToggleAnnouncements(channelName: string, name: string): void;
+declare function ChannelToggleAnnouncements(
+  channelName: string,
+  name: string
+): void;
 
 /**
  * Unbans a player from the specified channel
@@ -79,7 +114,10 @@ declare function ChannelUnban(channelName: string, playerName: string): void;
  * @param playerName The name of the player to remove moderator status from
  * @see https://wow.gamepedia.com/API_ChannelUnmoderator
  */
-declare function ChannelUnmoderator(channelName: string, playerName: string): void;
+declare function ChannelUnmoderator(
+  channelName: string,
+  playerName: string
+): void;
 
 /**
  * Unmutes the specified user on the channel
@@ -111,7 +149,26 @@ declare function EnumerateServerChannels(): [...string[]];
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetChannelList(): [number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean];
+declare function GetChannelList(): [
+  number,
+  string,
+  boolean,
+  number,
+  string,
+  boolean,
+  number,
+  string,
+  boolean,
+  number,
+  string,
+  boolean,
+  number,
+  string,
+  boolean,
+  number,
+  string,
+  boolean
+];
 
 /**
  * Returns information about the specified channel
@@ -122,7 +179,9 @@ declare function GetChannelList(): [number, string, boolean, number, string, boo
  * @see https://wow.gamepedia.com/API_GetChannelName
  * @tupleReturn
  */
-declare function GetChannelName(channelIdOrName: number | string): [number, string, number];
+declare function GetChannelName(
+  channelIdOrName: number | string
+): [number, string, number];
 
 /**
  * Get the channels received by a chat window
@@ -132,7 +191,24 @@ declare function GetChannelName(channelIdOrName: number | string): [number, stri
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetChatWindowChannels(frameId: number): [string, number, string, number, string, number, string, number, string, number, string, number, string, number];
+declare function GetChatWindowChannels(
+  frameId: number
+): [
+  string,
+  number,
+  string,
+  number,
+  string,
+  number,
+  string,
+  number,
+  string,
+  number,
+  string,
+  number,
+  string,
+  number
+];
 
 /**
  * Joins the channel with the specified name. A player can be in a maximum of 10 chat channels. In opposite to API_JoinTemporaryChannel
@@ -146,7 +222,12 @@ declare function GetChatWindowChannels(frameId: number): [string, number, string
  *  - The name of the channel (Ohklus: seems to be nil for most channels)
  * @see https://wow.gamepedia.com/API_JoinChannelByName
  */
-declare function JoinChannelByName(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): [number, string];
+declare function JoinChannelByName(
+  channelName: string,
+  password?: string,
+  frameId?: number,
+  hasVoice?: boolean
+): [number, string];
 
 /**
  * Joins the channel with the specified name. A player can be in a maximum of 10 chat channels. In opposite to API_JoinTemporaryChannel
@@ -161,7 +242,12 @@ declare function JoinChannelByName(channelName: string, password?: string, frame
  * @see https://wow.gamepedia.com/API_JoinPermanentChannel
  * @tupleReturn
  */
-declare function JoinPermanentChannel(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): [number, string];
+declare function JoinPermanentChannel(
+  channelName: string,
+  password?: string,
+  frameId?: number,
+  hasVoice?: boolean
+): [number, string];
 
 /**
  * Joins the channel with the specified name. A player can be in a maximum of 10 chat channels. In opposite to API_JoinPermanentChannel
@@ -176,7 +262,12 @@ declare function JoinPermanentChannel(channelName: string, password?: string, fr
  * @see https://wow.gamepedia.com/API_JoinTemporaryChannel
  * @tupleReturn
  */
-declare function JoinTemporaryChannel(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): [number, string];
+declare function JoinTemporaryChannel(
+  channelName: string,
+  password?: string,
+  frameId?: number,
+  hasVoice?: boolean
+): [number, string];
 
 /**
  * Leaves the channel with the specified name
@@ -191,7 +282,9 @@ declare function LeaveChannelByName(channelName: string): void;
  * is given, list all of the numbered channels you are a member of
  * @see https://wow.gamepedia.com/API_ListChannelByName
  */
-declare function ListChannelByName(channelName?: string | number): WoWAPI.Unknown;
+declare function ListChannelByName(
+  channelName?: string | number
+): WoWAPI.Unknown;
 
 /**
  * Lists all of the channels
@@ -207,7 +300,10 @@ declare function ListChannels(): void;
  * from a particular frame in the default UI. Use ChatFrame_RemoveChannel(chatFrame, "channelName") instead
  * @see https://wow.gamepedia.com/API_RemoveChatWindowChannel
  */
-declare function RemoveChatWindowChannel(windowId: number, channelName: string): void;
+declare function RemoveChatWindowChannel(
+  windowId: number,
+  channelName: string
+): void;
 
 /**
  * Sends a chat message
@@ -221,7 +317,12 @@ declare function RemoveChatWindowChannel(windowId: number, channelName: string):
  * ignored for any other chat type
  * @see https://wow.gamepedia.com/API_SendChatMessage
  */
-declare function SendChatMessage(message: string, chatType?: WoWAPI.ChannelChatType, languageId?: WoWAPI.ChannelLanguageId, channelOrName?: string): void;
+declare function SendChatMessage(
+  message: string,
+  chatType?: WoWAPI.ChannelChatType,
+  languageId?: WoWAPI.ChannelLanguageId,
+  channelOrName?: string
+): void;
 
 /**
  * Sets the channel owner
@@ -237,4 +338,7 @@ declare function SetChannelOwner(channelName: string, newOwner: string): void;
  * @param password The password to assign to the channel
  * @see https://wow.gamepedia.com/API_SetChannelPassword
  */
-declare function SetChannelPassword(channelName: string, password: string): void;
+declare function SetChannelPassword(
+  channelName: string,
+  password: string
+): void;

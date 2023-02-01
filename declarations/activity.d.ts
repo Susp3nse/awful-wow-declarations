@@ -1,7 +1,5 @@
 /** @noSelfInFile */
 
-/// <reference path="global.d.ts" />
-
 /**
  * Accept the challenge to a duel.
  *

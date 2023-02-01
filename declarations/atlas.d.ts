@@ -1,4 +1,3 @@
 declare namespace WoWAPI {
-
-    type AtlasID = string;
+  type AtlasID = string;
 }

@@ -1,8 +1,5 @@
 /** @noSelfInFile */
 
-/// <reference path="global.d.ts" />
-/// <reference path="ui/ui.d.ts" />
-
 /**
  * Presses the specified FrameXML action button
  *
@@ -81,7 +78,9 @@ declare function GetActionBarToggles(): [boolean, boolean, boolean, boolean];
  * @see https://wow.gamepedia.com/API_GetActionCharges
  * @tupleReturn
  */
-declare function GetActionCharges(slotId: ActionBarSlotId): [number, number, number, number, number];
+declare function GetActionCharges(
+  slotId: ActionBarSlotId
+): [number, number, number, number, number];
 
 /**
  * Retrieves the cooldown data of the action specified
@@ -91,7 +90,9 @@ declare function GetActionCharges(slotId: ActionBarSlotId): [number, number, num
  * @see https://wow.gamepedia.com/API_GetActionCooldown
  * @tupleReturn
  */
-declare function GetActionCooldown(slotId: ActionBarSlotId): [number, number, number, number];
+declare function GetActionCooldown(
+  slotId: ActionBarSlotId
+): [number, number, number, number];
 
 /**
  * Gets the available count for an action, if applicable
@@ -111,7 +112,9 @@ declare function GetActionCount(slotId: ActionBarSlotId): string | number;
  * @see https://wow.gamepedia.com/API_GetActionInfo
  * @tupleReturn
  */
-declare function GetActionInfo(slotId: ActionBarSlotId): [string, WoWAPI.Unknown, WoWAPI.Unknown];
+declare function GetActionInfo(
+  slotId: ActionBarSlotId
+): [string, WoWAPI.Unknown, WoWAPI.Unknown];
 
 /**
  * Gets the text label for an action
@@ -130,7 +133,9 @@ declare function GetActionText(slotId: ActionBarSlotId): string | null;
  * @returns The texture filepath for the action's icon image. nil, if the slot is empty
  * @see https://wow.gamepedia.com/API_GetActionTexture
  */
-declare function GetActionTexture(slotId: ActionBarSlotId): WoWAPI.TexturePath | null;
+declare function GetActionTexture(
+  slotId: ActionBarSlotId
+): WoWAPI.TexturePath | null;
 
 /**
  * Returns the current bonus action bar index
@@ -182,7 +187,9 @@ declare function IsAttackAction(slotId: ActionBarSlotId): WoWAPI.Flag | null;
  * @returns 1 if the action in the slot is currently auto-repeating, nil if it is not auto-repeating or the slot is empty
  * @see https://wow.gamepedia.com/API_IsAutoRepeatAction
  */
-declare function IsAutoRepeatAction(slotId: ActionBarSlotId): WoWAPI.Flag | null;
+declare function IsAutoRepeatAction(
+  slotId: ActionBarSlotId
+): WoWAPI.Flag | null;
 
 /**
  * Determine whether an action is currently executing
@@ -269,7 +276,13 @@ declare function PlaceAction(slotId: ActionBarSlotId): void;
  * @see https://wow.gamepedia.com/API_SetActionBarToggles
  */
 // tslint:disable-next-line max-line-length
-declare function SetActionBarToggles(bottomLeftState: WoWAPI.Flag, bottomRightState: WoWAPI.Flag, sideRightState: WoWAPI.Flag, sideRight2State: WoWAPI.Flag, alwaysShow: WoWAPI.Flag): void;
+declare function SetActionBarToggles(
+  bottomLeftState: WoWAPI.Flag,
+  bottomRightState: WoWAPI.Flag,
+  sideRightState: WoWAPI.Flag,
+  sideRight2State: WoWAPI.Flag,
+  alwaysShow: WoWAPI.Flag
+): void;
 
 /**
  * Begin "Right click" in the 3D game world.
@@ -299,4 +312,8 @@ declare function TurnOrActionStop(): void;
  * of 1, Blizzard produces a Lua error.
  * @private PROTECTED
  */
-declare function UseAction(slot: ActionBarSlotId, checkCursor?: WoWAPI.Flag, onSelf?: WoWAPI.Flag): void;
+declare function UseAction(
+  slot: ActionBarSlotId,
+  checkCursor?: WoWAPI.Flag,
+  onSelf?: WoWAPI.Flag
+): void;

@@ -1,28 +1,52 @@
 {
-  "author": {
-    "name": "wartoshika",
-    "email": "dev@qhun.de"
-  },
-  "description": "Typescript declarations for the current live World of Warcraft LUA API",
+  "version": "dev-DF-10.0.7",
+  "main": "declarations/index.d.ts",
+  "name": "awful-wow-declarations",
+  "homepage": "https://github.com/susp3nse/awful-wow-declarations#readme",
+  "license": "MIT",
+  "author": "Susp3nse",
+  "discord": "Susp3nse#0001",
+  "contributors": [
+    {
+      "name": "Susp3nse",
+      "email": "suspensefulrotations@gmail.com"
+    },
+    {
+      "name": "wartoshika",
+      "email": "dev@qhun.de"
+    }
+  ],
+  "description": "Typescript declarations for the Retail World of Warcraft LUA API For Awful Framework",
   "keywords": [
     "wow",
     "lua",
-    "wartoshika",
-    "qhun"
+    "typescript",
+    "awful"
   ],
-  "license": "MIT",
-  "main": "declarations/index.d.ts",
-  "name": "@wartoshika/wow-declarations",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postversion": "git push github --follow-tags",
-    "lint": "tslint -c tslint.json declarations/**/*.d.ts",
-    "lint:fix": "tslint -c tslint.json --fix declarations/**/*.d.ts"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Susp3nse/awful-wow-declarations.git"
   },
   "types": "declarations/index.d.ts",
-  "version": "9.0.5-release.2",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@typescript-to-lua/language-extensions": "1.0.0",
+    "lua-types": "2.13.1",
+    "typescript": "4.9.5",
+    "typescript-to-lua": "1.11.1"
+  },
   "devDependencies": {
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.3"
+    "ts-node": "10.9.1",
+    "eslint": "^8.33.0",
+    "typescript": "4.9.5",
+    "prettier": "^2.8.3",
+    "@types/node": "18.11.18",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "@typescript-eslint/eslint-plugin": "5.47.1",
+    "@typescript-eslint/parser": "5.47.1"
   }
 }

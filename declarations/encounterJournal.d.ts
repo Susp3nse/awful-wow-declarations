@@ -28,7 +28,10 @@ declare function EJ_GetContentTuningID(): number;
  * @see https://wow.gamepedia.com/API_EJ_GetCreatureInfo
  * @since 4.2.0 (2011-06-28)
  */
-declare function EJ_GetCreatureInfo(index: number, encounterId?: number): [number, string, string, number, number, number];
+declare function EJ_GetCreatureInfo(
+  index: number,
+  encounterId?: number
+): [number, string, string, number, number, number];
 
 /**
  * Returns the currently active encounter journal tier index
@@ -52,7 +55,9 @@ declare function EJ_GetDifficulty(): number;
  * @see https://wow.gamepedia.com/API_EJ_GetEncounterInfo
  * @since 4.2.0 (2011-06-28)
  */
-declare function EJ_GetEncounterInfo(encounterID: number): [string, string, number, number, WoWAPI.Hyperlink, number, number, number];
+declare function EJ_GetEncounterInfo(
+  encounterID: number
+): [string, string, number, number, WoWAPI.Hyperlink, number, number, number];
 
 /**
  * Returns encounter info from the journal
@@ -62,6 +67,9 @@ declare function EJ_GetEncounterInfo(encounterID: number): [string, string, numb
  * @see https://wow.gamepedia.com/API_EJ_GetEncounterInfoByIndex
  * @since 4.2.0 (2011-06-28)
  */
-declare function EJ_GetEncounterInfoByIndex(index: number, instanceId?: number): [string, string, number, number, string, number, number, number];
+declare function EJ_GetEncounterInfoByIndex(
+  index: number,
+  instanceId?: number
+): [string, string, number, number, string, number, number, number];
 
 // next todo: EJ_GetInstanceByIndex

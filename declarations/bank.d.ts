@@ -7,7 +7,10 @@
  * bank bags and is more awkward to use
  * @see https://wow.gamepedia.com/API_BankButtonIDToInvSlotID
  */
-declare function BankButtonIDToInvSlotID(buttodId: number, isBag: WoWAPI.Flag): WoWAPI.INVENTORY_SLOT_ID;
+declare function BankButtonIDToInvSlotID(
+  buttodId: number,
+  isBag: WoWAPI.Flag
+): WoWAPI.INVENTORY_SLOT_ID;
 
 /**
  * Will Close the Bank Frame if opened

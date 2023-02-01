@@ -1,15 +1,13 @@
 /** @noSelfInFile */
 
-/// <reference path="global.d.ts" />
-
 declare namespace WoWAPI {
-    type ARENA_TEAM_GREEN = 0;
-    type ARENA_TEAM_GOLD = 1;
-    type ARENA_TEAM = ARENA_TEAM_GREEN | ARENA_TEAM_GOLD;
+  type ARENA_TEAM_GREEN = 0;
+  type ARENA_TEAM_GOLD = 1;
+  type ARENA_TEAM = ARENA_TEAM_GREEN | ARENA_TEAM_GOLD;
 
-    type ARENA_ID_2VS2 = 4;
-    type ARENA_ID_3VS3 = 5;
-    type ARENA_ID = ARENA_ID_2VS2 | ARENA_ID_3VS3;
+  type ARENA_ID_2VS2 = 4;
+  type ARENA_ID_3VS3 = 5;
+  type ARENA_ID = ARENA_ID_2VS2 | ARENA_ID_3VS3;
 }
 
 /**
@@ -20,7 +18,9 @@ declare namespace WoWAPI {
  * @see https://wow.gamepedia.com/API_GetBattlefieldTeamInfo
  * @tupleReturn
  */
-declare function GetBattlefieldTeamInfo(index: WoWAPI.ARENA_TEAM): [string, number, number, number];
+declare function GetBattlefieldTeamInfo(
+  index: WoWAPI.ARENA_TEAM
+): [string, number, number, number];
 
 /**
  * Returns the current arena season. Returns 0 when there is no active season
@@ -68,4 +68,7 @@ declare function IsInArenaTeam(): boolean;
  * @param joinAsGroup Unknown
  * @see https://wow.gamepedia.com/API_JoinSkirmish
  */
-declare function JoinSkirmish(arenaId: WoWAPI.ARENA_ID, joinAsGroup?: boolean): void;
+declare function JoinSkirmish(
+  arenaId: WoWAPI.ARENA_ID,
+  joinAsGroup?: boolean
+): void;

@@ -1,8 +1,16 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type FacialHairCustomizationGlobalType = "EARRINGS" | "FEATURES" | "HAIR" | "HORNS" | "MARKINGS" | "NORMAL" | "PIERCINGS" | "TUSKS";
-    type FacialHairCustomizationType = "HORNS" | "NORMAL";
+  type FacialHairCustomizationGlobalType =
+    | 'EARRINGS'
+    | 'FEATURES'
+    | 'HAIR'
+    | 'HORNS'
+    | 'MARKINGS'
+    | 'NORMAL'
+    | 'PIERCINGS'
+    | 'TUSKS';
+  type FacialHairCustomizationType = 'HORNS' | 'NORMAL';
 }
 
 /**
@@ -28,7 +36,9 @@ declare function CancelBarberShop(): void;
  * @see https://wow.gamepedia.com/API_GetBarberShopStyleInfo
  * @tupleReturn
  */
-declare function GetBarberShopStyleInfo(catId: number): [string, WoWAPI.Unknown, WoWAPI.Unknown, WoWAPI.Flag];
+declare function GetBarberShopStyleInfo(
+  catId: number
+): [string, WoWAPI.Unknown, WoWAPI.Unknown, WoWAPI.Flag];
 
 /**
  * Returns the total costs of the cosmetic changes
@@ -53,4 +63,7 @@ declare function GetHairCustomization(): WoWAPI.FacialHairCustomizationType;
  * @param catId Ascending index of the customization category that should be changed to the next/previous style
  * @param reverse 1 if the selection should be changed to the previous style, nil if to the next
  */
-declare function SetNextBarberShopStyle(catId: number, reverse?: WoWAPI.Flag): void;
+declare function SetNextBarberShopStyle(
+  catId: number,
+  reverse?: WoWAPI.Flag
+): void;

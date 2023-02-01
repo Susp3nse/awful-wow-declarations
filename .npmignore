@@ -1,4 +1,11 @@
+node_modules
+.editorconfig
+.eslintrc
+.gitignore
+.npmignore
+.prettierignore
+.prettierrc
+commitlint.config.cjs
+pnpm-lock.yaml
+renovate.json
 tsconfig.json
-*.tgz
-.travis.yml
-tslint.json

@@ -1,7 +1,7 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type CurrencyLink = Hyperlink;
+  type CurrencyLink = Hyperlink;
 }
 
 /**
@@ -24,7 +24,10 @@ declare function GetCoinText(amount: number, separator: string): string;
  * @see https://wow.gamepedia.com/API_GetCoinTextureString
  * @since 3.0.2
  */
-declare function GetCoinTextureString(amount: number, fontHeight?: number): string;
+declare function GetCoinTextureString(
+  amount: number,
+  fontHeight?: number
+): string;
 
 /**
  * Retrieve Information about a currency at index including it's amount
@@ -35,7 +38,18 @@ declare function GetCoinTextureString(amount: number, fontHeight?: number): stri
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetCurrencyInfo(currencyId: number): [string, number, WoWAPI.TexturePath, number, number, number, boolean, WoWAPI.ITEM_QUALITY];
+declare function GetCurrencyInfo(
+  currencyId: number
+): [
+  string,
+  number,
+  WoWAPI.TexturePath,
+  number,
+  number,
+  number,
+  boolean,
+  WoWAPI.ITEM_QUALITY
+];
 
 /**
  * Retrieve Information about a currency at index including it's amount
@@ -48,7 +62,18 @@ declare function GetCurrencyInfo(currencyId: number): [string, number, WoWAPI.Te
  * @tupleReturn
  */
 // tslint:disable-next-line unified-signatures max-line-length
-declare function GetCurrencyInfo(currencyLinkOrString: WoWAPI.CurrencyLink | string): [string, number, WoWAPI.TexturePath, number, number, number, boolean, WoWAPI.ITEM_QUALITY];
+declare function GetCurrencyInfo(
+  currencyLinkOrString: WoWAPI.CurrencyLink | string
+): [
+  string,
+  number,
+  WoWAPI.TexturePath,
+  number,
+  number,
+  number,
+  boolean,
+  WoWAPI.ITEM_QUALITY
+];
 
 /**
  * Get the currencyLink for the specified currencyID
@@ -60,7 +85,10 @@ declare function GetCurrencyInfo(currencyLinkOrString: WoWAPI.CurrencyLink | str
  * @see https://wow.gamepedia.com/API_GetCurrencyLink
  * @since 3.0.2
  */
-declare function GetCurrencyLink(currencyId: number, currencyAmount: number): WoWAPI.CurrencyLink;
+declare function GetCurrencyLink(
+  currencyId: number,
+  currencyAmount: number
+): WoWAPI.CurrencyLink;
 
 /**
  * Returns the number of entries in the currency list.
@@ -81,7 +109,22 @@ declare function GetCurrencyListSize(): number;
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetCurrencyListInfo(currencyIndex: number): [string, boolean, boolean, boolean, boolean, number, WoWAPI.TexturePath, number, number, number, WoWAPI.Unknown, number];
+declare function GetCurrencyListInfo(
+  currencyIndex: number
+): [
+  string,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  number,
+  WoWAPI.TexturePath,
+  number,
+  number,
+  number,
+  WoWAPI.Unknown,
+  number
+];
 
 /**
  * Alters the expanded state of a currency list header.
@@ -91,7 +134,10 @@ declare function GetCurrencyListInfo(currencyIndex: number): [string, boolean, b
  * @see https://wow.gamepedia.com/API_ExpandCurrencyList
  * @since 3.0.2
  */
-declare function ExpandCurrencyList(currencyHeaderIndex: number, expanded: WoWAPI.Flag): void;
+declare function ExpandCurrencyList(
+  currencyHeaderIndex: number,
+  expanded: WoWAPI.Flag
+): void;
 
 /**
  * Marks/unmarks a currency as unused
@@ -101,7 +147,10 @@ declare function ExpandCurrencyList(currencyHeaderIndex: number, expanded: WoWAP
  * @see https://wow.gamepedia.com/API_SetCurrencyUnused
  * @since 3.0.2
  */
-declare function SetCurrencyUnused(currencyIndex: number, unused: WoWAPI.Flag): void;
+declare function SetCurrencyUnused(
+  currencyIndex: number,
+  unused: WoWAPI.Flag
+): void;
 
 /**
  * Returns the number of currencies currently watched on the player's backpack
@@ -121,7 +170,9 @@ declare function GetNumWatchedTokens(): number;
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetBackpackCurrencyInfo(watchedIndex: number): [string, number, WoWAPI.TexturePath, number];
+declare function GetBackpackCurrencyInfo(
+  watchedIndex: number
+): [string, number, WoWAPI.TexturePath, number];
 
 /**
  * Alters the backpack tracking state of a currency
@@ -131,4 +182,7 @@ declare function GetBackpackCurrencyInfo(watchedIndex: number): [string, number,
  * @see https://wow.gamepedia.com/API_SetCurrencyBackpack
  * @since 3.0.2
  */
-declare function SetCurrencyBackpack(currencyIndex: number, track: WoWAPI.Flag): void;
+declare function SetCurrencyBackpack(
+  currencyIndex: number,
+  track: WoWAPI.Flag
+): void;

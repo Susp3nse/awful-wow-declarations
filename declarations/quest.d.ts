@@ -1,8 +1,8 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type QuestType = "required" | "reward" | "choice";
-    type QuestState = "OFFER" | "COMPLETE";
+  type QuestType = 'required' | 'reward' | 'choice';
+  type QuestState = 'OFFER' | 'COMPLETE';
 }
 
 /**
@@ -34,7 +34,10 @@ declare function AcknowledgeAutoAcceptQuest(): void;
  * @param type popup type, one of "OFFER" or "COMPLETE"
  * @see https://wow.gamepedia.com/API_AddAutoQuestPopUp
  */
-declare function AddAutoQuestPopUp(questId: number, type: WoWAPI.QuestState): void;
+declare function AddAutoQuestPopUp(
+  questId: number,
+  type: WoWAPI.QuestState
+): void;
 
 /**
  * Adds a quest to the list of quests being watched with an optional time to watch it
@@ -133,3 +136,59 @@ declare function IsQuestCompletable(): boolean;
  * @see https://wow.gamepedia.com/API_GetNumQuestItems
  */
 declare function GetNumQuestItems(): number;
+
+/**
+ * Returns the number of entries in the quest log
+ *
+ * {@link https://wowpedia.fandom.com/wiki/API_GetNumQuestLogEntries}
+ *
+ * @returns 0 - numEntries - Number of entries in the Quest Log, including collapsable zone headers
+ * @returns 1 - numQuests - Number of actual quests in the Quest Log, not counting zone headers
+ */
+declare function GetNumQuestLogEntries(): LuaMultiReturn<[number, number]>;
+
+declare namespace C_QuestLog {
+  /**
+   * Returns whether the supplied quest in the quest log is complete
+   *
+   * {@link https://wowpedia.fandom.com/wiki/API_C_QuestLog.IsComplete}
+   *
+   * @param questId - The quest's Identifier
+   *
+   * @returns isComplete - Whether the quest is both in the quest log and is complete
+   */
+  function IsComplete(questId: number): boolean;
+
+  /**
+   * Returns true if the specified quest has been failed
+   *
+   * {@link https://wowpedia.fandom.com/wiki/API_C_QuestLog.IsFailed}
+   *
+   * @param questId - The quest's Identifier
+   *
+   * @returns isFailed - Returns true if failed
+   */
+  function IsFailed(questId: number): boolean;
+
+  /**
+   * Returns if a quest has been completed
+   *
+   * {@link https://wowpedia.fandom.com/wiki/API_C_QuestLog.IsQuestFlaggedCompleted}
+   *
+   * @param questId - The quest's Identifier
+   *
+   * @returns isCompleted - Returns true if completed; returns false if not completed or if the questID is invalid
+   */
+  function IsQuestFlaggedCompleted(questId: number): boolean;
+
+  /**
+   * Only returns a questID for actual quests, not headers
+   *
+   * {@link https://wowpedia.fandom.com/wiki/API_C_QuestLog.GetQuestIDForLogIndex}
+   *
+   * @param questLogIndex - The quest's Index in the Quest Log
+   *
+   * @returns questID - The quest's Identifier
+   */
+  function GetQuestIDForLogIndex(questLogIndex: number): number;
+}

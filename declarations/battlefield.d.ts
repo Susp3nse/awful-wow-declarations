@@ -1,12 +1,17 @@
 /** @noSelfInFile */
 
 declare namespace WoWAPI {
-    type BattlefieldStatusType = "queued" | "confirm" | "active" | "none" | "error";
-    type BattlefieldTeamSize = 0 | 2 | 3 | 5;
-    type BattlefieldType = "ARENA" | "BATTLEGROUND" | "WARGAME";
-    type BattlefieldWinType = null | 0 | 1 | 255;
-    type BattlefieldUiStateType = 0 | 1 | 2;
-    type BattlefieldFaction = null | undefined | void | 0 | 1;
+  type BattlefieldStatusType =
+    | 'queued'
+    | 'confirm'
+    | 'active'
+    | 'none'
+    | 'error';
+  type BattlefieldTeamSize = 0 | 2 | 3 | 5;
+  type BattlefieldType = 'ARENA' | 'BATTLEGROUND' | 'WARGAME';
+  type BattlefieldWinType = null | 0 | 1 | 255;
+  type BattlefieldUiStateType = 0 | 1 | 2;
+  type BattlefieldFaction = null | undefined | void | 0 | 1;
 }
 
 /**
@@ -57,7 +62,9 @@ declare function GetBattlefieldEstimatedWaitTime(): number;
  * @see https://wow.gamepedia.com/API_GetBattlefieldFlagPosition
  * @tupleReturn
  */
-declare function GetBattlefieldFlagPosition(index: number): [number, number, string];
+declare function GetBattlefieldFlagPosition(
+  index: number
+): [number, number, string];
 
 /**
  * Get shutdown timer for the battlefield instance
@@ -87,7 +94,22 @@ declare function GetBattlefieldPortExpiration(index: number): number;
  * @see https://wow.gamepedia.com/API_GetBattlefieldScore
  * @tupleReturn
  */
-declare function GetBattlefieldScore(playerIndex: number): [string, number, number, number, number, number, string, string, string, number, number, string];
+declare function GetBattlefieldScore(
+  playerIndex: number
+): [
+  string,
+  number,
+  number,
+  number,
+  number,
+  number,
+  string,
+  string,
+  string,
+  number,
+  number,
+  string
+];
 
 /**
  * Get data from the custom battlefield scoreboard columns
@@ -97,7 +119,10 @@ declare function GetBattlefieldScore(playerIndex: number): [string, number, numb
  * If you want to make sure you have the most recent data you will have to call RequestBattlefieldScoreData and then wait for UPDATE_BATTLEFIELD_SCORE
  * @see https://wow.gamepedia.com/API_GetBattlefieldStatData
  */
-declare function GetBattlefieldStatData(playerIndex: number, columnIndex: number): WoWAPI.Unknown;
+declare function GetBattlefieldStatData(
+  playerIndex: number,
+  columnIndex: number
+): WoWAPI.Unknown;
 
 /**
  * Get list of battleground specific columns on the scoreboard
@@ -105,7 +130,9 @@ declare function GetBattlefieldStatData(playerIndex: number, columnIndex: number
  * @see https://wow.gamepedia.com/API_GetBattlefieldStatInfo
  * @tupleReturn
  */
-declare function GetBattlefieldStatInfo(columnIndex: number): [string, string, string];
+declare function GetBattlefieldStatInfo(
+  columnIndex: number
+): [string, string, string];
 
 /**
  * Get the status of the arena, battleground, or wargame that the player is either queued for or inside
@@ -114,14 +141,27 @@ declare function GetBattlefieldStatInfo(columnIndex: number): [string, string, s
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetBattlefieldStatus(battlefieldIndex: number): [WoWAPI.BattlefieldStatusType, string, WoWAPI.BattlefieldTeamSize, number, WoWAPI.Unknown, WoWAPI.BattlefieldType, WoWAPI.Unknown, WoWAPI.UnitRoleType];
+declare function GetBattlefieldStatus(
+  battlefieldIndex: number
+): [
+  WoWAPI.BattlefieldStatusType,
+  string,
+  WoWAPI.BattlefieldTeamSize,
+  number,
+  WoWAPI.Unknown,
+  WoWAPI.BattlefieldType,
+  WoWAPI.Unknown,
+  WoWAPI.UnitRoleType
+];
 
 /**
  * Get time this player's been in the queue in milliseconds
  * @param battlegroundQueuePosition The queue position
  * @see https://wow.gamepedia.com/API_GetBattlefieldTimeWaited
  */
-declare function GetBattlefieldTimeWaited(battlegroundQueuePosition: number): number;
+declare function GetBattlefieldTimeWaited(
+  battlegroundQueuePosition: number
+): number;
 
 /**
  * Get the winner of the battlefield
@@ -137,7 +177,9 @@ declare function GetBattlefieldWinner(): WoWAPI.BattlefieldWinType;
  * @see https://wow.gamepedia.com/API_GetBattlegroundInfo
  * @tupleReturn
  */
-declare function GetBattlegroundInfo(battlegroundTypeIndex: number): [string, WoWAPI.Flag, WoWAPI.Flag, WoWAPI.Flag, number, string];
+declare function GetBattlegroundInfo(
+  battlegroundTypeIndex: number
+): [string, WoWAPI.Flag, WoWAPI.Flag, WoWAPI.Flag, number, string];
 
 /**
  * Returns the max number of battlefields you can queue for
@@ -173,7 +215,22 @@ declare function GetNumWorldStateUI(): number;
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetWorldStateUIInfo(worldUiStateIndex: number): [number, WoWAPI.BattlefieldUiStateType, boolean, string, string, string, string, string, string, number, number, number];
+declare function GetWorldStateUIInfo(
+  worldUiStateIndex: number
+): [
+  number,
+  WoWAPI.BattlefieldUiStateType,
+  boolean,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  number,
+  number,
+  number
+];
 
 /**
  * Queues the player, or the player's group, for a battlefield instance
@@ -183,7 +240,11 @@ declare function GetWorldStateUIInfo(worldUiStateIndex: number): [number, WoWAPI
  * @deprecated
  * @protected Protected functions can only be called from a secure execution path.
  */
-declare function JoinBattlefield(battlefieldIndex: number, asGroup?: boolean, isRated?: boolean): void;
+declare function JoinBattlefield(
+  battlefieldIndex: number,
+  asGroup?: boolean,
+  isRated?: boolean
+): void;
 
 /**
  * Leaves the current battlefield
@@ -215,4 +276,6 @@ declare function RequestBattlegroundInstanceInfo(instanceIndex: number): void;
  * @param faction nil = All, 0 = Horde, 1 = Alliance
  * @see https://wow.gamepedia.com/API_SetBattlefieldScoreFaction
  */
-declare function SetBattlefieldScoreFaction(faction?: WoWAPI.BattlefieldFaction): void;
+declare function SetBattlefieldScoreFaction(
+  faction?: WoWAPI.BattlefieldFaction
+): void;

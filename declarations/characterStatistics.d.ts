@@ -28,7 +28,32 @@ declare const CR_VERSATILITY_DAMAGE_DONE = 29;
 declare const CR_VERSATILITY_DAMAGE_TAKEN = 31;
 
 declare namespace WoWAPI {
-    type CombatRatingIdentifier = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 23 | 24 | 25 | 26 | 29 | 31;
+  type CombatRatingIdentifier =
+    | 2
+    | 3
+    | 4
+    | 5
+    | 6
+    | 7
+    | 8
+    | 9
+    | 10
+    | 11
+    | 12
+    | 13
+    | 14
+    | 15
+    | 16
+    | 17
+    | 18
+    | 19
+    | 20
+    | 23
+    | 24
+    | 25
+    | 26
+    | 29
+    | 31;
 }
 
 /**
@@ -38,7 +63,10 @@ declare namespace WoWAPI {
  * @returns Amount of attack power granted by the specified amount of the specified stat
  * @see https://wow.gamepedia.com/API_GetAttackPowerForStat
  */
-declare function GetAttackPowerForStat(statIndex: number, amount: number): number;
+declare function GetAttackPowerForStat(
+  statIndex: number,
+  amount: number
+): number;
 
 /**
  * Player's block chance in percentage
@@ -51,14 +79,18 @@ declare function GetBlockChance(): number;
  * @param combatRatingIdentifier A combat rating identifier from PaperDollFrame.lua
  * @see https://wow.gamepedia.com/API_GetCombatRating
  */
-declare function GetCombatRating(combatRatingIdentifier: WoWAPI.CombatRatingIdentifier): number;
+declare function GetCombatRating(
+  combatRatingIdentifier: WoWAPI.CombatRatingIdentifier
+): number;
 
 /**
  * Returns the bonus, in percent (or other converted units, such as skill points), of a specific combat rating for the player
  * @param combatRatingIdentifier A combat rating identifier from PaperDollFrame.lua
  * @see https://wow.gamepedia.com/API_GetCombatRatingBonus
  */
-declare function GetCombatRatingBonus(combatRatingIdentifier: WoWAPI.CombatRatingIdentifier): number;
+declare function GetCombatRatingBonus(
+  combatRatingIdentifier: WoWAPI.CombatRatingIdentifier
+): number;
 
 /**
  * Returns the player's critical hit chance
@@ -133,7 +165,9 @@ declare function GetMasteryEffect(): [number, number];
  * unknown
  * @param combatRatingIdentifier unknown
  */
-declare function GetMaxCombatRatingBonus(combatRatingIdentifier: WoWAPI.CombatRatingIdentifier): WoWAPI.Unknown;
+declare function GetMaxCombatRatingBonus(
+  combatRatingIdentifier: WoWAPI.CombatRatingIdentifier
+): WoWAPI.Unknown;
 
 /**
  * Returns player's Melee attack haste
@@ -153,7 +187,9 @@ declare function GetOverrideAPBySpellPower(): WoWAPI.Unknown;
 /**
  * unknown
  */
-declare function GetOverrideSpellPowerByAP(...args: WoWAPI.Unknown[]): WoWAPI.Unknown;
+declare function GetOverrideSpellPowerByAP(
+  ...args: WoWAPI.Unknown[]
+): WoWAPI.Unknown;
 
 /**
  * Player's parry chance in percentage
@@ -174,7 +210,9 @@ declare function GetPetSpellBonusDamage(): WoWAPI.Unknown;
 /**
  * unknown
  */
-declare function GetPowerRegenForPowerType(powerType: WoWAPI.UnitPowerType): WoWAPI.Unknown;
+declare function GetPowerRegenForPowerType(
+  powerType: WoWAPI.UnitPowerType
+): WoWAPI.Unknown;
 
 /**
  * The players critical strike chance with the currently equipped range weapon as a floating point figure
