@@ -18,7 +18,7 @@ Please add the awful-wow-declarations path to your `tsconfig.json` compiler opti
 {
   "compilerOptions": {
     // ...
-    "typeRoots": ["@types", "awful-wow-declarations"]
+    "typeRoots": ["@types", "@susp3nse/awful-wow-declarations"]
   }
 }
 ```
